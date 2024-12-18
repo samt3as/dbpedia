@@ -32,7 +32,7 @@ function fetchCharacterData(characterName) {
             <p>${version.description}</p>
             <h3>Transformations:</h3>
             <ul>
-                ${[...version.transformations].map(transform => `
+                ${[...version?.transformations].map(transform => `
                     <li>
                         <strong>${transform.name}</strong> (Power Level: ${transform.powerLevel})
                         <p>${transform.description}</p>
@@ -98,7 +98,7 @@ function getCharacterData(characterName) {
                     ]
                 },
                 "daima": {
-                    name: "Goku (Daima)",
+                    name: "Goku (Mini/Daima)",
                     image: "https://example.com/daima_goku.jpg", // Replace with actual Daima Goku image URL
                     race: "Saiyan",
                     affiliation: "Z Fighters",
@@ -114,51 +114,80 @@ function getCharacterData(characterName) {
             }
         },
         "vegeta": {
-            name: "Vegeta",
-            image: "https://example.com/goku-image.jpg", // Replace with real URL
-            race: "Saiyan",
-            affiliation: "Z Fighters (formerly apart of the Frieza Force)",
-            description: "Prince Vegeta (Vegeta) was born on Planet Vegeta. He is the son of King Vegeta, he has 2 kids Trunks and Bulla.",
-            transformations: [
-                {
-                    name: "Great Ape (Oozaru), Injured:",
-                    powerLevel: "70,000",
-                    description: "This was Vegeta's last resort as he was getting beaten heavily, he lost a bit of power level since he was injured. ",
-                },
-                {
-                    name: "Super Saiyan",
-                    powerLevel: "15,000,000",
-                    description: "A transformation that drastically increases power and turns Goku's hair golden."
-                },
-                {
-                    name: "Super Saiyan 2",
-                    powerLevel: "50,000,000",
-                    description: "Nothing much changes, he just gets lightning and more powerful."
+            "versions": {
+                "z": {
+                    name: "Vegeta (Z)",
+                    image: "https://example.com/goku-image.jpg", // Replace with real URL
+                    race: "Saiyan",
+                    affiliation: "Z Fighters (formerly apart of the Frieza Force)",
+                    description: "Prince Vegeta (Vegeta) was born on Planet Vegeta. He is the son of King Vegeta, he has 1 son Trunks.",
+                    transformations: [
+
+                        {
+                            name: "Great Ape (Oozaru), Injured:",
+                            powerLevel: "70,000",
+                            description: "This was Vegeta's last resort as he was getting beaten heavily, he lost a bit of power level since he was injured. ",
+                        },
+                        {
+                            name: "Super Saiyan",
+                            powerLevel: "15,000,000",
+                            description: "A transformation that drastically increases power and turns Goku's hair golden."
+                        },
+                        {
+                            name: "Super Saiyan 2",
+                            powerLevel: "50,000,000",
+                            description: "Nothing much changes, he just gets lightning and more powerful."
+                        },
+                    ]
                 },
 
-                {
-                    name: "Super Saiyan God",
-                    powerLevel: "300,000,000",
-                    description: "A divine transformation that Vegeta worked so hard for."
+                "super": {
+                    name: "Vegeta (Super)",
+                    image: "https://example.com/goku-image.jpg", // Replace with real URL
+                    race: "Saiyan",
+                    affiliation: "Z Fighters",
+                    description: "Vegeta is a saiyan who gets god-like abilties, he now has 2 kids, Trunks and Bulla.",
+                    transformations: [
+                        {
+                            name: "Super Saiyan God",
+                            powerLevel: "300,000,000",
+                            description: "A divine transformation that Vegeta worked so hard for.",
+                        },
+                        {
+                            name: "Super Saiyan God Super Saiyan (Super Saiyan Blue):",
+                            powerLevel: "100",
+                            description: "A level even higher than Super Saiyan God.",
+                        },
+                        {
+                            name: "Super Saiyan God Super Saiyan Evolved (Super Saiyan Blue Evolved):",
+                            powerLevel: "100",
+                            description: "This form was achieved when fighting Jiren, it has barely been seen outside of that fight.",
+                        },
+                        {
+                            name: "Ultra Ego:",
+                            powerLevel: "100",
+                            description: "This form is Ultra Ego. Vegeta may have lost his eyebrows but he is even stronger. This form uses God of Destruction abilities,",
+                        },
+                    ]
                 },
-                {
-                    name: "Super Saiyan God Super Saiyan (Super Saiyan Blue):",
-                    powerLevel: "100",
-                    description: "A level even higher than Super Saiyan God."
+                "daima": {
+                    name: "Vegeta (Mini/Daima)",
+                    image: "https://example.com/goku-image.jpg", // Replace with real URL
+                    race: "Saiyan",
+                    affiliation: "Z Fighters",
+                    description: "Vegeta is now mini along side his friends!",
+                    transformations: [
+                        {
+                            name: "Super Saiyan God",
+                            powerLevel: "300,000,000",
+                            description: "A divine transformation that Vegeta worked so hard for."
+                        },
+
+                    ]
                 },
-                {
-                    name: "Super Saiyan God Super Saiyan Evolved (Super Saiyan Blue Evolved):",
-                    powerLevel: "100",
-                    description: "This form was achieved when fighting Jiren, it has barely been seen outside of that fight."
-                },
-                {
-                    name: "Ultra Ego:",
-                    powerLevel: "100",
-                    description: "This ultimate form, is Ultra Ego. Vegeta may have lost his eyebrows but he is even stronger. This form uses God Of Destruction abilities,"
-                },
-            ]
+            },
         },
-        " future trunks": {
+        "future trunks": {
             name: "Future Trunks",
             image: "https://example.com/goku-image.jpg", // Replace with real URL
             race: "Half-Saiyan",
